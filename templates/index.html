@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AIstylist – Ask a Fashion Question</title>
+	<style>
+		body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #fafafa; color: #222; }
+		.container { max-width: 760px; margin: 0 auto; padding: 24px; }
+		h1 { font-size: 28px; margin: 16px 0; }
+		.card { background: #fff; border: 1px solid #eaeaea; border-radius: 12px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+		label { display: block; font-weight: 600; margin-bottom: 8px; }
+		textarea { width: 100%; min-height: 120px; padding: 12px; border: 1px solid #d0d7de; border-radius: 8px; font-size: 16px; resize: vertical; }
+		button { background: #111827; color: white; padding: 10px 16px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+		button:hover { background: #0b1220; }
+		.flash { background: #fff8e1; color: #8a6d3b; border: 1px solid #faebcc; padding: 10px 12px; border-radius: 8px; margin-bottom: 16px; }
+		.footer { margin-top: 24px; color: #666; font-size: 14px; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>AIstylist</h1>
+		<p>Ask for outfit ideas tailored to your day.</p>
+
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="flash">{{ messages[0] }}</div>
+			{% endif %}
+		{% endwith %}
+
+		<div class="card">
+			<form method="post" action="{{ url_for('result') }}">
+				<label for="question">Your question</label>
+				<textarea id="question" name="question" placeholder="e.g., What should I wear for a rainy Monday at work?" required></textarea>
+				<div style="margin-top:12px;">
+					<button type="submit">Get outfit suggestions</button>
+				</div>
+			</form>
+		</div>
+
+		<p class="footer">Powered by Together AI · Prototype</p>
+	</div>
+</body>
+</html>
+
+

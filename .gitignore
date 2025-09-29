@@ -144,6 +144,18 @@ ENV/
 env.bak/
 venv.bak/
 
+# Local environment variants and secret key files (do not commit secrets)
+.env.local
+.env.*.local
+openai.key
+openai_api_key.txt
+openai_secret.txt
+
+# Together API secret files (do not commit secrets)
+together.key
+together_api_key.txt
+together_secret.txt
+
 # Spyder project settings
 .spyderproject
 .spyproject
