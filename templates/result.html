@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>AIstylist – Suggestions</title>
+	<style>
+		body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; background: #fafafa; color: #222; }
+		.container { max-width: 760px; margin: 0 auto; padding: 24px; }
+		h1 { font-size: 28px; margin: 16px 0; }
+		.card { background: #fff; border: 1px solid #eaeaea; border-radius: 12px; padding: 20px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+		.subtitle { color: #555; margin-top: 4px; margin-bottom: 16px; }
+		pre { white-space: pre-wrap; word-wrap: break-word; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background: #f6f8fa; border-radius: 8px; padding: 16px; border: 1px solid #eaecef; }
+		.actions a { color: #2563eb; text-decoration: none; }
+		.actions a:hover { text-decoration: underline; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>AIstylist</h1>
+		<p class="subtitle">Here are some ideas based on your question:</p>
+
+		<div class="card">
+			<p><strong>Your question:</strong> {{ question }}</p>
+			<pre>{{ answer }}</pre>
+		</div>
+
+		<p class="actions" style="margin-top:16px;"><a href="{{ url_for('index') }}">Ask another question</a></p>
+	</div>
+</body>
+</html>
+
+
